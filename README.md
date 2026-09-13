@@ -1,7 +1,20 @@
 # Khalid Siyanbola, Portfolio
 
 A single page developer portfolio, built plain HTML/CSS/JS, no build step or framework. Replaces the previous
-Vercel hosted portfolio, rebuilt here to move to Render and to fix content that had drifted out of date.
+Vercel hosted portfolio, redesigned from scratch (not just a content refresh) and moved to Render.
+
+## Design
+
+Dark first, mono accented, motion driven. Interactive flourishes are split by input type rather than applied
+everywhere blindly:
+
+- **Pointer devices** (`@media (pointer: fine)`, checked in JS too): a custom cursor that expands over links and
+  cards, a radial glow in the hero that tracks the mouse, spotlight and 3D tilt on project/skill/stat cards, and
+  magnetic buttons that pull slightly toward the cursor.
+- **Every device, including touch**: staggered scroll reveal via `IntersectionObserver`, a top scroll progress
+  bar, animated count up numbers on the About and Verified Skills stats, and a looping marquee of core tech.
+- `prefers-reduced-motion: reduce` turns off the custom cursor, scroll reveal transitions, and the marquee loop,
+  content still renders fully, just without the motion.
 
 ## What changed from the old (Vercel) portfolio
 
@@ -26,9 +39,9 @@ Vercel hosted portfolio, rebuilt here to move to Render and to fix content that 
 ```
 khalid-portfolio/
 ├── index.html                          All page content and sections
-├── css/style.css                        Styling (light/dark via prefers-color-scheme)
-├── js/main.js                           Scroll reveal animation
-├── assets/Khalid-Siyanbola-Resume.pdf   Downloadable resume, linked from the hero
+├── css/style.css                        Dark theme, cards, marquee, reveal/stagger, reduced-motion support
+├── js/main.js                           Cursor, tilt/spotlight, magnetic buttons, scroll reveal, count up
+├── assets/Khalid-Siyanbola-Resume.pdf   Downloadable resume, linked from the hero and contact section
 ├── render.yaml                          Render static site config
 └── README.md
 ```

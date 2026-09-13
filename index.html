@@ -7,53 +7,175 @@
   <meta name="description" content="Full stack engineer building marketplaces, real time systems, and fintech products end to end." />
   <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>&#9889;</text></svg>" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
 
+  <div class="progress-bar" id="progressBar"></div>
+  <div class="cursor-dot" id="cursorDot"></div>
+  <div class="cursor-ring" id="cursorRing"></div>
+
   <main>
 
     <!-- HERO -->
-    <header class="hero reveal">
-      <p class="eyebrow">Full Stack Engineer</p>
-      <h1>Khalid Siyanbola</h1>
-      <p class="tagline">
-        I build reliable full stack products end to end, marketplaces, real time systems, and fintech tools,
-        using Go, Node.js, React, and React Native.
-      </p>
-      <div class="hero-links">
-        <a class="btn btn-primary" href="mailto:siyanbolagiggs@gmail.com">siyanbolagiggs@gmail.com</a>
-        <a class="btn btn-ghost" href="https://github.com/siyanbolagiggs1" target="_blank" rel="noopener">GitHub</a>
-        <a class="btn btn-ghost" href="assets/Khalid-Siyanbola-Resume.pdf" target="_blank" rel="noopener">Resume</a>
+    <header class="hero" id="hero">
+      <div class="hero-glow" id="heroGlow" aria-hidden="true"></div>
+      <div class="hero-inner">
+        <p class="mono eyebrow reveal">Full Stack Engineer / Ilorin, Nigeria</p>
+        <h1 class="hero-name reveal">
+          <span class="name-line">Khalid</span>
+          <span class="name-line accent-text">Siyanbola</span>
+        </h1>
+        <p class="tagline reveal">
+          I build reliable full stack products end to end, marketplaces, real time systems, and fintech tools,
+          using Go, Node.js, React, and React Native.
+        </p>
+        <div class="hero-links reveal">
+          <a class="btn btn-primary magnetic" href="mailto:siyanbolagiggs@gmail.com" data-magnetic>
+            <span>Say hello</span>
+          </a>
+          <a class="btn btn-ghost magnetic" href="https://github.com/siyanbolagiggs1" target="_blank" rel="noopener" data-magnetic>
+            <span>GitHub</span>
+          </a>
+          <a class="btn btn-ghost magnetic" href="assets/Khalid-Siyanbola-Resume.pdf" target="_blank" rel="noopener" data-magnetic>
+            <span>Resume &#8595;</span>
+          </a>
+        </div>
+      </div>
+      <div class="scroll-cue reveal" aria-hidden="true">
+        <span class="mono">scroll</span>
+        <span class="scroll-cue-line"></span>
       </div>
     </header>
 
+    <!-- MARQUEE -->
+    <div class="marquee-band reveal">
+      <div class="marquee-track">
+        <span>Go</span><span>&bull;</span><span>Node.js</span><span>&bull;</span><span>TypeScript</span><span>&bull;</span>
+        <span>Next.js</span><span>&bull;</span><span>React Native</span><span>&bull;</span><span>MongoDB</span><span>&bull;</span>
+        <span>Redis</span><span>&bull;</span><span>Docker</span><span>&bull;</span><span>Paystack</span><span>&bull;</span>
+        <span>WebSocket</span><span>&bull;</span><span>Groq</span><span>&bull;</span><span>Gemini</span><span>&bull;</span>
+        <span>Go</span><span>&bull;</span><span>Node.js</span><span>&bull;</span><span>TypeScript</span><span>&bull;</span>
+        <span>Next.js</span><span>&bull;</span><span>React Native</span><span>&bull;</span><span>MongoDB</span><span>&bull;</span>
+        <span>Redis</span><span>&bull;</span><span>Docker</span><span>&bull;</span><span>Paystack</span><span>&bull;</span>
+        <span>WebSocket</span><span>&bull;</span><span>Groq</span><span>&bull;</span><span>Gemini</span><span>&bull;</span>
+      </div>
+    </div>
+
     <!-- ABOUT -->
-    <section class="section reveal">
-      <p class="about">
+    <section class="section" id="about">
+      <p class="mono section-num reveal">01 / About</p>
+      <p class="about reveal">
         Four years building production software end to end, from data model to deployed API to UI. I've shipped
-        REST APIs across seven microservices for a live social app, and independently designed and built a
-        two sided marketplace, backend, frontend, payments, and an AI support assistant, on my own. I care about
-        clean API contracts, schemas that don't break downstream consumers, and cutting complexity out of a system
-        wherever I find it.
+        REST APIs across seven microservices for a live social app, and independently designed and built a two
+        sided marketplace, backend, frontend, payments, and an AI support assistant, on my own. I care about
+        clean API contracts, schemas that don't break downstream consumers, and cutting complexity out of a
+        system wherever I find it.
       </p>
+      <div class="stat-row">
+        <div class="stat-pill reveal">
+          <span class="stat-num mono" data-countup="4" data-suffix="">0</span>
+          <span class="stat-label">years building production software</span>
+        </div>
+        <div class="stat-pill reveal">
+          <span class="stat-num mono" data-countup="7" data-suffix="">0</span>
+          <span class="stat-label">microservices shipped on JustTalk</span>
+        </div>
+        <div class="stat-pill reveal">
+          <span class="stat-num mono" data-countup="3" data-suffix="">0</span>
+          <span class="stat-label">production projects, solo and team</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section class="section" id="projects">
+      <p class="mono section-num reveal">02 / Projects</p>
+
+      <article class="project reveal" data-tilt>
+        <div class="project-glow" aria-hidden="true"></div>
+        <div class="project-inner">
+          <div class="project-head">
+            <h3>Pulse</h3>
+            <span class="project-meta mono">Full Stack Engineer &middot; May 2026 to Present</span>
+          </div>
+          <p>
+            A social engagement marketplace: any user can fund a repost campaign, and any user can earn money
+            completing one. Built end to end, a Next.js dashboard with role aware navigation and SSE powered
+            live notifications, an influence scoring and fraud detection engine, Paystack integration for real
+            bank top ups and payouts, and an AI support assistant using the Groq and Gemini APIs. Simplified an
+            earlier business/promoter role split into a single unified user role. Deployed with Docker and
+            CI/CD to Railway and Vercel.
+          </p>
+          <div class="tags">
+            <span class="tag">Next.js</span><span class="tag">TypeScript</span><span class="tag">Go (Gin)</span>
+            <span class="tag">MongoDB</span><span class="tag">Redis</span><span class="tag">Paystack</span>
+            <span class="tag">Groq &amp; Gemini</span><span class="tag">Docker</span><span class="tag">n8n</span>
+          </div>
+          <a class="project-link" href="https://pulse-murex-five.vercel.app/" target="_blank" rel="noopener">View live app &#8599;</a>
+        </div>
+      </article>
+
+      <article class="project reveal" data-tilt>
+        <div class="project-glow" aria-hidden="true"></div>
+        <div class="project-inner">
+          <div class="project-head">
+            <h3>JustTalk</h3>
+            <span class="project-meta mono">Full Stack Developer</span>
+          </div>
+          <p>
+            Full stack developer on a social messaging and voice casts app. Contributed across seven
+            Node.js/Express/TypeScript microservices (auth, identity, casts, messaging, search, subscriptions,
+            shared data models) and the React Native mobile client. Real time chat over Socket.io, JWT and
+            Google OAuth, a referral system, email verification flows, activity tracking, and media pipelines
+            with ffmpeg and Google Cloud Storage.
+          </p>
+          <div class="tags">
+            <span class="tag">Node.js</span><span class="tag">Express</span><span class="tag">TypeScript</span>
+            <span class="tag">MongoDB</span><span class="tag">Socket.io</span><span class="tag">React Native</span>
+            <span class="tag">Google Cloud Storage</span>
+          </div>
+          <a class="project-link" href="https://justtalkapp.com/" target="_blank" rel="noopener">Visit app site &#8599;</a>
+        </div>
+      </article>
+
+      <article class="project reveal" data-tilt>
+        <div class="project-glow" aria-hidden="true"></div>
+        <div class="project-inner">
+          <div class="project-head">
+            <h3>expendit</h3>
+            <span class="project-meta mono">Open Source Contributor</span>
+          </div>
+          <p>
+            Open source expense tracking app. Shipped Google Sign-In, schema based input and password
+            validation, a JWT duplicate token fix, expense CRUD fixes, Docker and CORS configuration fixes,
+            replaced hardcoded URLs and SMTP settings with configurable environment variables, and an AI
+            powered financial document processing and transaction insights feature.
+          </p>
+          <div class="tags">
+            <span class="tag">Next.js</span><span class="tag">TypeScript</span><span class="tag">Go</span>
+          </div>
+          <a class="project-link" href="https://github.com/cuesoftinc/expendit" target="_blank" rel="noopener">View repository &#8599;</a>
+        </div>
+      </article>
     </section>
 
     <!-- SKILLS -->
-    <section class="section reveal">
-      <h2>Skills</h2>
+    <section class="section" id="skills">
+      <p class="mono section-num reveal">03 / Skills</p>
       <div class="skills-grid">
 
-        <div class="skill-group">
-          <h3>Languages</h3>
+        <div class="skill-group reveal" data-tilt>
+          <h3 class="mono">Languages</h3>
           <div class="tags">
             <span class="tag">TypeScript</span><span class="tag">JavaScript</span><span class="tag">Go</span>
           </div>
         </div>
 
-        <div class="skill-group">
-          <h3>Frontend</h3>
+        <div class="skill-group reveal" data-tilt>
+          <h3 class="mono">Frontend</h3>
           <div class="tags">
             <span class="tag">React</span><span class="tag">Next.js</span><span class="tag">React Native</span>
             <span class="tag">Tailwind CSS</span><span class="tag">shadcn/ui</span><span class="tag">Zustand</span>
@@ -61,17 +183,17 @@
           </div>
         </div>
 
-        <div class="skill-group">
-          <h3>Backend</h3>
+        <div class="skill-group reveal" data-tilt>
+          <h3 class="mono">Backend</h3>
           <div class="tags">
             <span class="tag">Node.js</span><span class="tag">Express</span><span class="tag">Go (Gin)</span>
             <span class="tag">REST API design</span><span class="tag">Microservices</span>
-            <span class="tag">JSON Schema validation (Ajv, Joi, Zod)</span>
+            <span class="tag">JSON Schema (Ajv, Joi, Zod)</span>
           </div>
         </div>
 
-        <div class="skill-group">
-          <h3>Data &amp; Infra</h3>
+        <div class="skill-group reveal" data-tilt>
+          <h3 class="mono">Data &amp; Infra</h3>
           <div class="tags">
             <span class="tag">MongoDB</span><span class="tag">Mongoose</span><span class="tag">SQL</span>
             <span class="tag">Redis</span><span class="tag">Docker</span><span class="tag">GitHub Actions CI/CD</span>
@@ -79,134 +201,83 @@
           </div>
         </div>
 
-        <div class="skill-group">
-          <h3>Real-time &amp; Auth</h3>
+        <div class="skill-group reveal" data-tilt>
+          <h3 class="mono">Real-time &amp; Auth</h3>
           <div class="tags">
             <span class="tag">WebSocket</span><span class="tag">Socket.io</span><span class="tag">Server-Sent Events</span>
             <span class="tag">JWT</span><span class="tag">OAuth (Google)</span>
           </div>
         </div>
 
-        <div class="skill-group">
-          <h3>Payments</h3>
+        <div class="skill-group reveal" data-tilt>
+          <h3 class="mono">Payments</h3>
           <div class="tags">
             <span class="tag">Paystack (Transactions &amp; Transfers)</span><span class="tag">Stripe (Payment Intents, Connect)</span>
           </div>
         </div>
 
-        <div class="skill-group">
-          <h3>AI / LLM</h3>
+        <div class="skill-group reveal" data-tilt>
+          <h3 class="mono">AI / LLM</h3>
           <div class="tags">
             <span class="tag">Groq API</span><span class="tag">Gemini API</span><span class="tag">Embeddings &amp; retrieval</span>
           </div>
         </div>
 
-        <div class="skill-group">
-          <h3>Automation &amp; Integrations</h3>
+        <div class="skill-group reveal" data-tilt>
+          <h3 class="mono">Automation</h3>
           <div class="tags">
             <span class="tag">n8n</span><span class="tag">HubSpot CRM</span><span class="tag">GoHighLevel</span>
             <span class="tag">Webhook integrations</span>
           </div>
         </div>
 
-        <div class="skill-group">
-          <h3>Engineering Practices</h3>
-          <div class="tags">
-            <span class="tag">Git &amp; code review</span><span class="tag">Automated testing</span>
-            <span class="tag">Production troubleshooting</span>
-          </div>
-        </div>
-
       </div>
     </section>
 
-    <!-- PROJECTS -->
-    <section class="section reveal">
-      <h2>Projects</h2>
-
-      <article class="project">
-        <div class="project-head">
-          <h3>Pulse</h3>
-          <span class="project-meta">Full Stack Engineer &middot; May 2026 to Present</span>
-        </div>
-        <p>
-          A social engagement marketplace: any user can fund a repost campaign, and any user can earn money
-          completing one. Built end to end, a Next.js dashboard with role aware navigation and SSE powered live
-          notifications, an influence scoring and fraud detection engine, Paystack integration for real bank
-          top ups and payouts, and an AI support assistant using the Groq and Gemini APIs. Simplified an earlier
-          business/promoter role split into a single unified user role. Deployed with Docker and CI/CD to
-          Railway and Vercel.
-        </p>
-        <div class="tags">
-          <span class="tag">Next.js</span><span class="tag">TypeScript</span><span class="tag">Go (Gin)</span>
-          <span class="tag">MongoDB</span><span class="tag">Redis</span><span class="tag">Paystack</span>
-          <span class="tag">Groq &amp; Gemini</span><span class="tag">Docker</span><span class="tag">n8n</span>
-        </div>
-        <a class="project-link" href="https://pulse-murex-five.vercel.app/" target="_blank" rel="noopener">Live app &#8599;</a>
-      </article>
-
-      <article class="project">
-        <div class="project-head">
-          <h3>JustTalk</h3>
-          <span class="project-meta">Full Stack Developer</span>
-        </div>
-        <p>
-          Full stack developer on a social messaging and voice casts app. Contributed across seven
-          Node.js/Express/TypeScript microservices (auth, identity, casts, messaging, search, subscriptions,
-          shared data models) and the React Native mobile client. Real time chat over Socket.io, JWT and Google
-          OAuth, a referral system, email verification flows, activity tracking, and media pipelines with ffmpeg
-          and Google Cloud Storage.
-        </p>
-        <div class="tags">
-          <span class="tag">Node.js</span><span class="tag">Express</span><span class="tag">TypeScript</span>
-          <span class="tag">MongoDB</span><span class="tag">Socket.io</span><span class="tag">React Native</span>
-          <span class="tag">Google Cloud Storage</span>
-        </div>
-        <a class="project-link" href="https://justtalkapp.com/" target="_blank" rel="noopener">App site &#8599;</a>
-      </article>
-
-      <article class="project">
-        <div class="project-head">
-          <h3>expendit</h3>
-          <span class="project-meta">Open Source Contributor</span>
-        </div>
-        <p>
-          Open source expense tracking app. Shipped Google Sign-In, schema based input and password validation,
-          a JWT duplicate token fix, expense CRUD fixes, Docker and CORS configuration fixes, replaced hardcoded
-          URLs and SMTP settings with configurable environment variables, and an AI powered financial document
-          processing and transaction insights feature.
-        </p>
-        <div class="tags">
-          <span class="tag">Next.js</span><span class="tag">TypeScript</span><span class="tag">Go</span>
-        </div>
-        <a class="project-link" href="https://github.com/cuesoftinc/expendit" target="_blank" rel="noopener">Repository &#8599;</a>
-      </article>
-    </section>
-
     <!-- VERIFIED SKILLS -->
-    <section class="section reveal">
-      <h2>Verified Skills</h2>
-      <p class="about" style="margin-bottom: 1.5rem;">TestGorilla skills assessments, scored against other engineers who took the same tests.</p>
+    <section class="section" id="verified">
+      <p class="mono section-num reveal">04 / Verified Skills</p>
+      <p class="about reveal" style="margin-bottom: 2.5rem;">
+        TestGorilla skills assessments, scored against other engineers who took the same tests.
+      </p>
       <div class="stats-grid">
-        <div class="stat-card">
-          <strong>Top 2%</strong>
+        <div class="stat-card reveal" data-tilt>
+          <strong class="mono"><span data-countup="2" data-suffix="%">0</span></strong>
           <span>GitHub</span>
         </div>
-        <div class="stat-card">
-          <strong>Top 3%</strong>
+        <div class="stat-card reveal" data-tilt>
+          <strong class="mono"><span data-countup="3" data-suffix="%">0</span></strong>
           <span>Algorithms for Software Engineering</span>
         </div>
-        <div class="stat-card">
-          <strong>Top 5%</strong>
+        <div class="stat-card reveal" data-tilt>
+          <strong class="mono"><span data-countup="5" data-suffix="%">0</span></strong>
           <span>Software Engineer</span>
         </div>
+      </div>
+      <p class="mono verified-note reveal">top percentile shown, lower is better</p>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="section contact-section" id="contact">
+      <p class="mono section-num reveal">05 / Contact</p>
+      <h2 class="contact-heading reveal">Let's build<br /><span class="accent-text">something reliable.</span></h2>
+      <div class="hero-links reveal">
+        <a class="btn btn-primary magnetic" href="mailto:siyanbolagiggs@gmail.com" data-magnetic>
+          <span>siyanbolagiggs@gmail.com</span>
+        </a>
+        <a class="btn btn-ghost magnetic" href="https://github.com/siyanbolagiggs1" target="_blank" rel="noopener" data-magnetic>
+          <span>GitHub</span>
+        </a>
+        <a class="btn btn-ghost magnetic" href="assets/Khalid-Siyanbola-Resume.pdf" target="_blank" rel="noopener" data-magnetic>
+          <span>Resume &#8595;</span>
+        </a>
       </div>
     </section>
 
   </main>
 
   <footer class="footer">
-    <p>&copy; 2026 Khalid Siyanbola.</p>
+    <p class="mono">&copy; 2026 Khalid Siyanbola.</p>
   </footer>
 
   <script src="js/main.js"></script>
