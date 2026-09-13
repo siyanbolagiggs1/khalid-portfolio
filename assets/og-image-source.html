@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>OG Image</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800;900&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet" />
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body {
+    width: 1200px;
+    height: 630px;
+    overflow: hidden;
+    background: #08080b;
+    font-family: "Inter", sans-serif;
+  }
+  .mono { font-family: "JetBrains Mono", monospace; }
+
+  .card {
+    position: relative;
+    width: 1200px;
+    height: 630px;
+  }
+
+  .glow {
+    position: absolute;
+    top: -180px; right: -160px;
+    width: 700px; height: 700px;
+    background: radial-gradient(circle, #5eead422 0%, transparent 70%);
+  }
+  .glow2 {
+    position: absolute;
+    bottom: -220px; left: -140px;
+    width: 600px; height: 600px;
+    background: radial-gradient(circle, #a78bfa1c 0%, transparent 70%);
+  }
+
+  .grid-lines {
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
+    background-size: 48px 48px;
+  }
+
+  .content {
+    position: relative;
+    z-index: 2;
+    padding: 80px 90px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .eyebrow {
+    color: #5eead4;
+    font-size: 20px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 22px;
+  }
+
+  h1 {
+    font-size: 86px;
+    font-weight: 800;
+    color: #f2f2f5;
+    line-height: 1.05;
+    letter-spacing: -1px;
+  }
+  h1 .accent { color: #5eead4; }
+
+  .tagline {
+    margin-top: 26px;
+    font-size: 25px;
+    color: #9a9aa5;
+    max-width: 780px;
+    line-height: 1.5;
+  }
+
+  .tags {
+    margin-top: 40px;
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+  .tag {
+    font-family: "JetBrains Mono", monospace;
+    font-size: 17px;
+    color: #9a9aa5;
+    background: #17171d;
+    border: 1px solid #202027;
+    padding: 8px 18px;
+    border-radius: 999px;
+  }
+
+  .footer {
+    position: absolute;
+    bottom: 44px;
+    left: 90px;
+    right: 90px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .footer .url {
+    font-family: "JetBrains Mono", monospace;
+    font-size: 19px;
+    color: #5eead4;
+  }
+  .footer .role {
+    font-family: "JetBrains Mono", monospace;
+    font-size: 17px;
+    color: #55555f;
+  }
+
+  .bfly {
+    position: absolute;
+    top: 70px;
+    right: 110px;
+    width: 60px;
+    color: #a78bfa;
+    opacity: 0.5;
+  }
+</style>
+</head>
+<body>
+  <div class="card">
+    <div class="grid-lines"></div>
+    <div class="glow"></div>
+    <div class="glow2"></div>
+
+    <svg class="bfly" viewBox="0 0 100 80">
+      <g fill="currentColor">
+        <path d="M50 40 C 20 5, -5 15, 10 40 C -5 65, 20 70, 50 40 Z"/>
+        <path d="M50 40 C 80 5, 105 15, 90 40 C 105 65, 80 70, 50 40 Z"/>
+      </g>
+      <line x1="50" y1="28" x2="50" y2="56" stroke="currentColor" stroke-width="2.5" opacity="0.6"/>
+    </svg>
+
+    <div class="content">
+      <p class="eyebrow mono">Full Stack Engineer / Ilorin, Nigeria</p>
+      <h1>Khalid<br /><span class="accent">Siyanbola</span></h1>
+      <p class="tagline">
+        I build reliable full stack products end to end, marketplaces, real time systems, and fintech tools.
+      </p>
+      <div class="tags">
+        <span class="tag">Go</span>
+        <span class="tag">Node.js</span>
+        <span class="tag">Next.js</span>
+        <span class="tag">Paystack</span>
+        <span class="tag">Groq &amp; Gemini</span>
+      </div>
+    </div>
+
+    <div class="footer">
+      <span class="url mono">khalid-portfolio.onrender.com</span>
+      <span class="role mono">Portfolio</span>
+    </div>
+  </div>
+</body>
+</html>
