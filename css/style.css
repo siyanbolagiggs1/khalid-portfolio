@@ -21,10 +21,36 @@ body {
   margin: 0;
   font-family: "Inter", system-ui, sans-serif;
   color: var(--ink);
-  background: var(--bg);
+  background: transparent;
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   overflow-x: hidden;
+}
+
+.bg-fixed { position: fixed; inset: 0; background: var(--bg); z-index: -3; }
+
+/* ---------- Ambient butterflies ---------- */
+.butterflies { position: fixed; inset: 0; z-index: -2; overflow: hidden; pointer-events: none; }
+.butterfly {
+  position: absolute;
+  width: var(--size, 20px);
+  color: var(--hue, var(--accent));
+  opacity: 0.28;
+  animation: driftpath var(--dur, 36s) ease-in-out infinite;
+  animation-delay: var(--delay, 0s);
+  filter: drop-shadow(0 0 6px color-mix(in srgb, var(--hue, var(--accent)) 45%, transparent));
+}
+.bfly-svg { display: block; width: 100%; height: auto; overflow: visible; }
+.wing { transform-box: fill-box; animation: flap 0.46s ease-in-out infinite alternate; }
+.wing-left { transform-origin: 100% 50%; fill: currentColor; }
+.wing-right { transform-origin: 0% 50%; fill: currentColor; animation-delay: 0.03s; }
+@keyframes flap { from { transform: scaleX(1); } to { transform: scaleX(0.4); } }
+@keyframes driftpath {
+  0%   { transform: translate(0, 0) rotate(-6deg); }
+  25%  { transform: translate(14vw, -10vh) rotate(8deg); }
+  50%  { transform: translate(4vw, -22vh) rotate(-4deg); }
+  75%  { transform: translate(-10vw, -8vh) rotate(6deg); }
+  100% { transform: translate(0, 0) rotate(-6deg); }
 }
 
 .mono { font-family: "JetBrains Mono", ui-monospace, monospace; }
@@ -200,6 +226,7 @@ a { color: inherit; }
 .project-meta { font-size: 0.78rem; color: var(--ink-faint); }
 .project p { color: var(--ink-soft); margin-bottom: 20px; }
 .project .tags { margin-bottom: 18px; }
+.project-links { display: flex; flex-wrap: wrap; gap: 8px 22px; }
 .project-link {
   display: inline-block;
   font-size: 0.9rem;
@@ -258,7 +285,7 @@ a { color: inherit; }
 }
 .stat-card:hover { border-color: var(--accent); }
 .stat-card strong { display: block; font-size: 2.6rem; font-weight: 700; color: var(--accent); margin-bottom: 8px; }
-.stat-card span { font-size: 0.85rem; color: var(--ink-soft); }
+.stat-card > span { font-size: 0.85rem; color: var(--ink-soft); }
 .verified-note { color: var(--ink-faint); font-size: 0.72rem; margin-top: 18px; }
 
 /* ---------- Contact ---------- */
@@ -295,6 +322,11 @@ a { color: inherit; }
   .marquee-track { animation: none; }
   .scroll-cue-line { animation: none; }
   .cursor-dot, .cursor-ring { display: none; }
+  .butterflies { display: none; }
+}
+
+@media (max-width: 620px) {
+  .butterfly { opacity: 0.18; }
 }
 
 @media (max-width: 480px) {

@@ -13,6 +13,26 @@
 </head>
 <body>
 
+  <div class="bg-fixed" aria-hidden="true"></div>
+
+  <div class="butterflies" aria-hidden="true">
+    <div class="butterfly b1" style="left:8%; top:18%; --dur:34s; --delay:-2s; --size:34px; --hue:var(--accent);">
+      <svg viewBox="0 0 100 80" class="bfly-svg"><g class="wing wing-left"><path d="M50 40 C 20 5, -5 15, 10 40 C -5 65, 20 70, 50 40 Z"/></g><g class="wing wing-right"><path d="M50 40 C 80 5, 105 15, 90 40 C 105 65, 80 70, 50 40 Z"/></g><line x1="50" y1="28" x2="50" y2="56" stroke="currentColor" stroke-width="2.5" opacity="0.6"/></svg>
+    </div>
+    <div class="butterfly b2" style="left:82%; top:12%; --dur:41s; --delay:-11s; --size:26px; --hue:var(--violet);">
+      <svg viewBox="0 0 100 80" class="bfly-svg"><g class="wing wing-left"><path d="M50 40 C 20 5, -5 15, 10 40 C -5 65, 20 70, 50 40 Z"/></g><g class="wing wing-right"><path d="M50 40 C 80 5, 105 15, 90 40 C 105 65, 80 70, 50 40 Z"/></g><line x1="50" y1="28" x2="50" y2="56" stroke="currentColor" stroke-width="2.5" opacity="0.6"/></svg>
+    </div>
+    <div class="butterfly b3" style="left:20%; top:64%; --dur:38s; --delay:-24s; --size:30px; --hue:var(--accent);">
+      <svg viewBox="0 0 100 80" class="bfly-svg"><g class="wing wing-left"><path d="M50 40 C 20 5, -5 15, 10 40 C -5 65, 20 70, 50 40 Z"/></g><g class="wing wing-right"><path d="M50 40 C 80 5, 105 15, 90 40 C 105 65, 80 70, 50 40 Z"/></g><line x1="50" y1="28" x2="50" y2="56" stroke="currentColor" stroke-width="2.5" opacity="0.6"/></svg>
+    </div>
+    <div class="butterfly b4" style="left:68%; top:76%; --dur:29s; --delay:-6s; --size:24px; --hue:var(--violet);">
+      <svg viewBox="0 0 100 80" class="bfly-svg"><g class="wing wing-left"><path d="M50 40 C 20 5, -5 15, 10 40 C -5 65, 20 70, 50 40 Z"/></g><g class="wing wing-right"><path d="M50 40 C 80 5, 105 15, 90 40 C 105 65, 80 70, 50 40 Z"/></g><line x1="50" y1="28" x2="50" y2="56" stroke="currentColor" stroke-width="2.5" opacity="0.6"/></svg>
+    </div>
+    <div class="butterfly b5" style="left:45%; top:38%; --dur:46s; --delay:-18s; --size:32px; --hue:var(--accent);">
+      <svg viewBox="0 0 100 80" class="bfly-svg"><g class="wing wing-left"><path d="M50 40 C 20 5, -5 15, 10 40 C -5 65, 20 70, 50 40 Z"/></g><g class="wing wing-right"><path d="M50 40 C 80 5, 105 15, 90 40 C 105 65, 80 70, 50 40 Z"/></g><line x1="50" y1="28" x2="50" y2="56" stroke="currentColor" stroke-width="2.5" opacity="0.6"/></svg>
+    </div>
+  </div>
+
   <div class="progress-bar" id="progressBar"></div>
   <div class="cursor-dot" id="cursorDot"></div>
   <div class="cursor-ring" id="cursorRing"></div>
@@ -98,6 +118,29 @@
         <div class="project-glow" aria-hidden="true"></div>
         <div class="project-inner">
           <div class="project-head">
+            <h3>JustTalk</h3>
+            <span class="project-meta mono">Full Stack Developer</span>
+          </div>
+          <p>
+            Full stack developer on a social messaging and voice casts app. Contributed across seven
+            Node.js/Express/TypeScript microservices (auth, identity, casts, messaging, search, subscriptions,
+            shared data models) and the React Native mobile client. Real time chat over Socket.io, JWT and
+            Google OAuth, a referral system, email verification flows, activity tracking, and media pipelines
+            with ffmpeg and Google Cloud Storage.
+          </p>
+          <div class="tags">
+            <span class="tag">Node.js</span><span class="tag">Express</span><span class="tag">TypeScript</span>
+            <span class="tag">MongoDB</span><span class="tag">Socket.io</span><span class="tag">React Native</span>
+            <span class="tag">Google Cloud Storage</span>
+          </div>
+          <a class="project-link" href="https://justtalkapp.com/" target="_blank" rel="noopener">Visit app site &#8599;</a>
+        </div>
+      </article>
+
+      <article class="project reveal" data-tilt>
+        <div class="project-glow" aria-hidden="true"></div>
+        <div class="project-inner">
+          <div class="project-head">
             <h3>Pulse</h3>
             <span class="project-meta mono">Full Stack Engineer &middot; May 2026 to Present</span>
           </div>
@@ -122,29 +165,6 @@
         <div class="project-glow" aria-hidden="true"></div>
         <div class="project-inner">
           <div class="project-head">
-            <h3>JustTalk</h3>
-            <span class="project-meta mono">Full Stack Developer</span>
-          </div>
-          <p>
-            Full stack developer on a social messaging and voice casts app. Contributed across seven
-            Node.js/Express/TypeScript microservices (auth, identity, casts, messaging, search, subscriptions,
-            shared data models) and the React Native mobile client. Real time chat over Socket.io, JWT and
-            Google OAuth, a referral system, email verification flows, activity tracking, and media pipelines
-            with ffmpeg and Google Cloud Storage.
-          </p>
-          <div class="tags">
-            <span class="tag">Node.js</span><span class="tag">Express</span><span class="tag">TypeScript</span>
-            <span class="tag">MongoDB</span><span class="tag">Socket.io</span><span class="tag">React Native</span>
-            <span class="tag">Google Cloud Storage</span>
-          </div>
-          <a class="project-link" href="https://justtalkapp.com/" target="_blank" rel="noopener">Visit app site &#8599;</a>
-        </div>
-      </article>
-
-      <article class="project reveal" data-tilt>
-        <div class="project-glow" aria-hidden="true"></div>
-        <div class="project-inner">
-          <div class="project-head">
             <h3>expendit</h3>
             <span class="project-meta mono">Open Source Contributor</span>
           </div>
@@ -157,7 +177,10 @@
           <div class="tags">
             <span class="tag">Next.js</span><span class="tag">TypeScript</span><span class="tag">Go</span>
           </div>
-          <a class="project-link" href="https://github.com/cuesoftinc/expendit" target="_blank" rel="noopener">View repository &#8599;</a>
+          <div class="project-links">
+            <a class="project-link" href="https://expendit.cuesoft.io/" target="_blank" rel="noopener">View live app &#8599;</a>
+            <a class="project-link" href="https://github.com/cuesoftinc/expendit" target="_blank" rel="noopener">View repository &#8599;</a>
+          </div>
         </div>
       </article>
     </section>
@@ -242,15 +265,15 @@
       </p>
       <div class="stats-grid">
         <div class="stat-card reveal" data-tilt>
-          <strong class="mono"><span data-countup="2" data-suffix="%">0</span></strong>
+          <strong class="mono">Top <span data-countup="2" data-suffix="%">0</span></strong>
           <span>GitHub</span>
         </div>
         <div class="stat-card reveal" data-tilt>
-          <strong class="mono"><span data-countup="3" data-suffix="%">0</span></strong>
+          <strong class="mono">Top <span data-countup="3" data-suffix="%">0</span></strong>
           <span>Algorithms for Software Engineering</span>
         </div>
         <div class="stat-card reveal" data-tilt>
-          <strong class="mono"><span data-countup="5" data-suffix="%">0</span></strong>
+          <strong class="mono">Top <span data-countup="5" data-suffix="%">0</span></strong>
           <span>Software Engineer</span>
         </div>
       </div>
