@@ -1,0 +1,153 @@
+:root {
+  --ink: #111114;
+  --ink-soft: #55565f;
+  --line: #e6e6ea;
+  --bg: #ffffff;
+  --bg-alt: #fafafa;
+  --accent: #4f46e5;
+  --accent-soft: #eef0ff;
+  --tag-bg: #f2f2f5;
+  --radius: 12px;
+  --max: 760px;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --ink: #f0f0f2;
+    --ink-soft: #a6a7b0;
+    --line: #2a2a30;
+    --bg: #101013;
+    --bg-alt: #17171b;
+    --accent: #8b85ff;
+    --accent-soft: #1c1a33;
+    --tag-bg: #1c1c21;
+  }
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  font-family: "Inter", system-ui, sans-serif;
+  color: var(--ink);
+  background: var(--bg);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+main { max-width: var(--max); margin: 0 auto; padding: 0 24px; }
+
+h1, h2, h3 { line-height: 1.2; margin: 0; letter-spacing: -0.01em; }
+p { margin: 0; }
+a { color: inherit; }
+
+/* ---------- Hero ---------- */
+.hero { padding: 88px 0 8px; }
+.eyebrow {
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 10px;
+}
+.hero h1 { font-size: clamp(2.1rem, 6vw, 2.8rem); font-weight: 800; margin-bottom: 14px; }
+.tagline { font-size: 1.08rem; color: var(--ink-soft); max-width: 56ch; margin-bottom: 26px; }
+
+.hero-links { display: flex; flex-wrap: wrap; gap: 10px; }
+.btn {
+  display: inline-block;
+  padding: 10px 18px;
+  border-radius: 999px;
+  font-size: 0.92rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: opacity .15s ease, border-color .15s ease;
+}
+.btn-primary { background: var(--ink); color: var(--bg); }
+.btn-primary:hover { opacity: 0.85; }
+.btn-ghost { border: 1px solid var(--line); color: var(--ink); }
+.btn-ghost:hover { border-color: var(--accent); color: var(--accent); }
+
+/* ---------- Sections ---------- */
+.section { padding: 40px 0; border-top: 1px solid var(--line); }
+.section:first-of-type { border-top: none; }
+.section h2 { font-size: 1.5rem; font-weight: 700; margin-bottom: 22px; }
+.about { color: var(--ink-soft); font-size: 1.02rem; max-width: 62ch; }
+
+/* ---------- Skills ---------- */
+.skills-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 26px 40px; }
+@media (max-width: 620px) { .skills-grid { grid-template-columns: 1fr; } }
+.skill-group h3 {
+  font-size: 0.76rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--ink-soft);
+  margin-bottom: 10px;
+}
+.tags { display: flex; flex-wrap: wrap; gap: 8px; }
+.tag {
+  display: inline-block;
+  background: var(--tag-bg);
+  color: var(--ink);
+  padding: 6px 13px;
+  border-radius: 999px;
+  font-size: 0.85rem;
+}
+
+/* ---------- Projects ---------- */
+.project {
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 24px;
+  margin-bottom: 20px;
+  background: var(--bg-alt);
+}
+.project:last-child { margin-bottom: 0; }
+.project-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 4px 16px;
+  margin-bottom: 10px;
+}
+.project-head h3 { font-size: 1.15rem; font-weight: 700; }
+.project-meta { font-size: 0.85rem; color: var(--ink-soft); }
+.project p { color: var(--ink-soft); margin-bottom: 16px; }
+.project .tags { margin-bottom: 14px; }
+.project-link {
+  display: inline-block;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--accent);
+  text-decoration: none;
+}
+.project-link:hover { text-decoration: underline; }
+
+/* ---------- Verified skills stats ---------- */
+.stats-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+@media (max-width: 620px) { .stats-grid { grid-template-columns: 1fr; } }
+.stat-card {
+  background: var(--accent-soft);
+  border-radius: var(--radius);
+  padding: 20px;
+  text-align: center;
+}
+.stat-card strong { display: block; font-size: 1.5rem; font-weight: 800; color: var(--accent); margin-bottom: 4px; }
+.stat-card span { font-size: 0.85rem; color: var(--ink-soft); }
+
+/* ---------- Footer ---------- */
+.footer {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 32px 24px 60px;
+  color: var(--ink-soft);
+  font-size: 0.85rem;
+}
+
+/* ---------- Reveal on scroll ---------- */
+.reveal { opacity: 0; transform: translateY(14px); transition: opacity .5s ease, transform .5s ease; }
+.reveal.in { opacity: 1; transform: none; }
