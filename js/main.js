@@ -83,45 +83,52 @@
     countEls.forEach(animateCount);
   }
 
+  // ---------- Butterflies scatter from the cursor (pointer:fine only) ----------
+  if (hasFinePointer && !reduceMotion) {
+    const REPEL_RADIUS = 150;
+    const MAX_PUSH = 70;
+    const EASE = 0.16;
+
+    let mx = -9999, my = -9999;
+    window.addEventListener("mousemove", (e) => { mx = e.clientX; my = e.clientY; });
+    window.addEventListener("mouseleave", () => { mx = -9999; my = -9999; });
+
+    const flies = Array.from(document.querySelectorAll(".butterfly")).map((el) => ({
+      el,
+      inner: el.querySelector(".bfly-inner"),
+      ox: 0, oy: 0,
+    }));
+
+    function butterflyLoop() {
+      flies.forEach((f) => {
+        const rect = f.el.getBoundingClientRect();
+        const cx = rect.left + rect.width / 2;
+        const cy = rect.top + rect.height / 2;
+        const dx = cx - mx;
+        const dy = cy - my;
+        const dist = Math.hypot(dx, dy);
+
+        let tx = 0, ty = 0;
+        if (dist < REPEL_RADIUS && dist > 0.01) {
+          const force = 1 - dist / REPEL_RADIUS;
+          tx = (dx / dist) * force * MAX_PUSH;
+          ty = (dy / dist) * force * MAX_PUSH;
+          f.el.classList.toggle("startled", force > 0.35);
+        } else {
+          f.el.classList.remove("startled");
+        }
+
+        f.ox += (tx - f.ox) * EASE;
+        f.oy += (ty - f.oy) * EASE;
+        if (f.inner) f.inner.style.transform = `translate(${f.ox.toFixed(1)}px, ${f.oy.toFixed(1)}px)`;
+      });
+      requestAnimationFrame(butterflyLoop);
+    }
+    requestAnimationFrame(butterflyLoop);
+  }
+
   // ---------- Pointer-only interactive flourishes ----------
   if (hasFinePointer && !reduceMotion) {
-    document.body.classList.add("cursor-ready");
-
-    // Custom cursor (lerped follow)
-    const dot = document.getElementById("cursorDot");
-    const ring = document.getElementById("cursorRing");
-    let mx = window.innerWidth / 2, my = window.innerHeight / 2;
-    let rx = mx, ry = my;
-    let cursorVisible = false;
-
-    window.addEventListener("mousemove", (e) => {
-      mx = e.clientX; my = e.clientY;
-      if (!cursorVisible) {
-        cursorVisible = true;
-        dot.style.opacity = "1";
-        ring.style.opacity = "1";
-      }
-    });
-    window.addEventListener("mouseleave", () => {
-      cursorVisible = false;
-      dot.style.opacity = "0";
-      ring.style.opacity = "0";
-    });
-
-    function cursorLoop() {
-      rx += (mx - rx) * 0.18;
-      ry += (my - ry) * 0.18;
-      dot.style.transform = `translate(${mx}px, ${my}px) translate(-50%, -50%)`;
-      ring.style.transform = `translate(${rx}px, ${ry}px) translate(-50%, -50%)`;
-      requestAnimationFrame(cursorLoop);
-    }
-    requestAnimationFrame(cursorLoop);
-
-    document.querySelectorAll("a, button, [data-tilt]").forEach((el) => {
-      el.addEventListener("mouseenter", () => ring.classList.add("hovering"));
-      el.addEventListener("mouseleave", () => ring.classList.remove("hovering"));
-    });
-
     // Hero glow follows cursor within hero
     const hero = document.getElementById("hero");
     if (hero) {
