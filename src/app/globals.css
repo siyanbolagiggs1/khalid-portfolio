@@ -19,7 +19,7 @@ html { scroll-behavior: smooth; }
 
 body {
   margin: 0;
-  font-family: "Inter", system-ui, sans-serif;
+  font-family: var(--font-inter), "Inter", system-ui, sans-serif;
   color: var(--ink);
   background: transparent;
   line-height: 1.6;
@@ -55,7 +55,7 @@ body {
   100% { transform: translate(0, 0) rotate(-6deg); }
 }
 
-.mono { font-family: "JetBrains Mono", ui-monospace, monospace; }
+.mono { font-family: var(--font-jetbrains), "JetBrains Mono", ui-monospace, monospace; }
 
 main { max-width: var(--max); margin: 0 auto; padding: 0 var(--gutter); position: relative; }
 
@@ -144,7 +144,7 @@ a { color: inherit; }
 .marquee-track {
   display: inline-flex;
   gap: 18px;
-  font-family: "JetBrains Mono", monospace;
+  font-family: var(--font-jetbrains), "JetBrains Mono", monospace;
   font-size: 0.85rem;
   color: var(--ink-faint);
   animation: marquee 28s linear infinite;
