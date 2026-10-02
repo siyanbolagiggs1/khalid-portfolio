@@ -34,20 +34,20 @@ type Project = {
 
 const experience: Project[] = [
   {
-    name: "expendit",
-    meta: "Open Source Contributor · Internship · June 2026 to Present",
-    description:
-      "Open source expense tracking app, at Cuesoft. Shipped Google Sign-In, schema based input and password validation, a JWT duplicate token fix, expense CRUD fixes, Docker and CORS configuration fixes, replaced hardcoded URLs and SMTP settings with configurable environment variables, and an AI powered financial document processing and transaction insights feature.",
-    tags: ["Next.js", "TypeScript", "Go"],
-    link: { href: "https://expendit.cuesoft.io/", label: "View live app" },
-  },
-  {
     name: "JustTalk",
     meta: "Full Stack Developer · March 2022 to March 2026",
     description:
       "Full stack developer on a social messaging and voice casts app. Contributed across seven Node.js/Express/TypeScript microservices (auth, identity, casts, messaging, search, subscriptions, shared data models) and the React Native mobile client. Real time chat over Socket.io, JWT and Google OAuth, a referral system, email verification flows, activity tracking, and media pipelines with ffmpeg and Google Cloud Storage.",
     tags: ["Node.js", "Express", "TypeScript", "MongoDB", "Socket.io", "React Native", "Google Cloud Storage"],
     link: { href: "https://justtalkapp.com/", label: "Visit app site" },
+  },
+  {
+    name: "expendit",
+    meta: "Open Source Contributor · Internship · June 2026 to Present",
+    description:
+      "Open source expense tracking app, at Cuesoft. Shipped Google Sign-In, schema based input and password validation, a JWT duplicate token fix, expense CRUD fixes, Docker and CORS configuration fixes, replaced hardcoded URLs and SMTP settings with configurable environment variables, and an AI powered financial document processing and transaction insights feature.",
+    tags: ["Next.js", "TypeScript", "Go"],
+    link: { href: "https://expendit.cuesoft.io/", label: "View live app" },
   },
 ];
 
